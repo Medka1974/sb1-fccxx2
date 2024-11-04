@@ -1,0 +1,12 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="{{ currentChannel.name }}" />
+    <GridLayout rows="*" columns="*">
+        <VideoPlayer
+            id="videoPlayer"
+            src="{{ currentChannel.url }}"
+            autoplay="true"
+            controls="true"
+            fill="aspectFill"
+            height="100%" />
+    </GridLayout>
+</Page>

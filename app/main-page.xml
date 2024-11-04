@@ -1,0 +1,25 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="IPTV Player">
+        <ActionItem ios.position="right" android.position="actionBar" 
+            text="Add Playlist" tap="{{ onAddPlaylist }}" />
+    </ActionBar>
+    
+    <GridLayout rows="auto, *">
+        <ListView items="{{ groups }}" row="1">
+            <ListView.itemTemplate>
+                <StackLayout class="p-2">
+                    <Label text="{{ name }}" class="text-lg font-bold" />
+                    <ListView items="{{ channels }}" height="auto">
+                        <ListView.itemTemplate>
+                            <GridLayout columns="auto, *" class="p-2" tap="onChannelTap">
+                                <Image src="{{ logo }}" width="40" height="40" 
+                                    class="rounded-full" col="0" />
+                                <Label text="{{ name }}" class="ml-2" col="1" />
+                            </GridLayout>
+                        </ListView.itemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </GridLayout>
+</Page>
